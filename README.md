@@ -1,73 +1,88 @@
-# React + TypeScript + Vite
+# 🎤 아이돌 매니저 - 방치형 게임
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+프로페셔널한 UI/UX와 깊이 있는 게임 메커닉을 갖춘 고급 아이돌 매니저 방치형 게임입니다.
 
-Currently, two official plugins are available:
+## 🎮 주요 기능
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 게임 시스템
+- **뽑기 시스템**: 5가지 등급의 아이돌 영입 (커먼/레어/에픽/레전더리/신화급)
+- **아이돌 관리**: 4가지 능력치 업그레이드 (보컬/댄스/랩/비주얼)
+- **팀 구성**: 아이돌 팀 생성 및 시너지 시스템
+- **콘서트**: 4가지 난이도 공연 (소규모/정규/대규모/월드투어)
+- **시설 업그레이드**: 10가지 시설로 수익 증대
 
-## React Compiler
+### 수익 시스템
+- 💰 **자동 수익**: 실시간 자금 및 팬 증가
+- 🌙 **오프라인 수익**: 게임 종료 후 자동 수익 (최대 8시간)
+- 📅 **일일 로그인**: 연속 로그인 보너스
+- ⭐ **경험치 시스템**: 플레이어 레벨업
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### UI/UX
+- 🎨 현대적이고 세련된 그래디언트 디자인
+- ✨ 부드러운 애니메이션과 호버 효과
+- 📱 반응형 레이아웃 (모바일 최적화)
+- 🎯 직관적인 네비게이션
 
-## Expanding the ESLint configuration
+## 🚀 시작하기
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 설치
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 개발 서버 실행
+```bash
+npm run dev
 ```
+
+### 빌드
+```bash
+npm run build
+```
+
+## 🛠️ 기술 스택
+
+- **프론트엔드**: React 18 + TypeScript
+- **빌드 도구**: Vite
+- **스타일링**: CSS3 (그래디언트, 애니메이션)
+- **상태 관리**: React Hooks + LocalStorage
+- **배포**: GitHub Pages
+
+## 📊 게임 밸런싱
+
+### 아이돌 등급별 능력치
+- **커먼**: 기본 능력치
+- **레어**: 2배 능력치
+- **에픽**: 3.5배 능력치
+- **레전더리**: 5배 능력치
+- **신화급**: 7배 능력치
+
+### 수익 계산
+```
+기본 수익 = 100 + 아이돌 수 × 5 + 능력치 합 × 0.2
+시설 보너스 = 훈련실 × 2 + 카페테리아 × 1.5
+팀 시너지 = 팀 레벨 × 2 + 등급 보너스
+```
+
+## 💾 저장 시스템
+
+모든 게임 데이터는 브라우저의 LocalStorage에 자동 저장됩니다.
+- 자동 저장 간격: 10초
+- 오프라인 수익 계산: 최대 8시간
+- 일일 로그인 보너스: 자동 계산
+
+## 🎯 게임 팁
+
+1. **초기 전략**: 자금을 모아 아이돌을 영입하세요
+2. **시너지 활용**: 팀을 구성하여 추가 수익을 얻으세요
+3. **시설 투자**: 시설 업그레이드로 수익 효율을 높이세요
+4. **콘서트 활용**: 레벨이 충분하면 콘서트로 큰 수익을 얻으세요
+5. **오프라인 수익**: 게임을 종료해도 수익이 계속됩니다
+
+## 📝 라이선스
+
+MIT License
+
+---
+
+**즐거운 게임 되세요!** 🎊
